@@ -1,0 +1,74 @@
+.cartitem,.leftblock {
+    display: inline-flex;
+    margin: 20px 10px;
+}
+.cartitem{
+  width: 90%;
+  justify-content: space-between;
+}
+  .cartitem .rightblock {
+    padding: 0 20px;
+  }
+  .cartitemactions {
+    margin-top: 20px;
+  }
+  .actionicons {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+  }
+  .actionbutton{
+    margin-left: 75%;
+  }
+  .actionicons:hover {
+    cursor: pointer;
+  }
+  
+  .cart{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cartimage{
+    height: 180px;
+    width: 180px;
+    border-radius:4px;
+    background: #ccc;
+  }
+  .rightdescriptionblock{
+    width: 50%;
+  }
+
+.descriptionblock{
+  margin-top: 20px;
+  height: 180px;
+  overflow:scroll ;
+  scrollbar-width: 0px;
+}
+.descriptionblockedit{
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  height: 180px;
+  overflow:scroll ;
+  scrollbar-width: 0px;
+}
+
+.descriptionblock::-webkit-scrollbar,.descriptionblockedit::-webkit-scrollbar {
+  display: none;
+}
+
+.inputfield{
+  width: 70%;
+}
+
+.productValue{
+  font-size:25px;
+  /* width: 50px; */
+}
+
+input, textarea{
+  /* text-align: center; */
+  margin: 5px;
+  border: 2px solid rgb(14, 199, 69);
+}

@@ -1,0 +1,54 @@
+.cartitem {
+    display: inline-flex;
+    margin: 20px 10px;
+}
+  .cartitem .rightblock {
+    padding: 0 20px;
+  }
+  .cartitemactions {
+    margin-top: 20px;
+  }
+  .actionicons {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+  }
+  .actionicons:hover {
+    cursor: pointer;
+  }
+  
+  .cart{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cartimage{
+    height: 110px;
+    width: 110px;
+    border-radius:4px;
+    background: #ccc;
+  }
+
+  form
+  {
+    display: flex;
+    flex-direction: column;
+  }
+input{
+  height: 2rem;
+}
+  form input, form textarea{
+    text-align: center;
+    margin: 10px 5px;
+    border: 2px solid rgb(14, 199, 69);
+  }
+  form textarea{
+    height: 100px;
+  }
+
+  .inputdiv{
+    text-align: center;
+    width: 33%;
+    margin: auto;
+    
+  }
