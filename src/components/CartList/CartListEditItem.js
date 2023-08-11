@@ -1,8 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { toggleTodo } from "../../redux/actions/todoActions";
 import { actions } from "../../redux/reducers/cartReducer";
 // import { todoSelector } from "../../redux/reducers/todoReducer";
-import { cartSelector } from "../../redux/reducers/cartReducer";
 import styles from "./CartList.module.css";
 import { useFormInput } from "../../hooks";
 import { useToasts } from "react-toast-notifications";
@@ -30,7 +29,7 @@ const CartListEditItem=(props)=> {
         {/* {console.log(product.data)} */}
         <div className={styles.leftblock}>
         <div className={styles.leftblock}>
-            <img className ={styles.cartimage} src={product.data.img}/>
+            <img className ={styles.cartimage} alt="cart broken" src={product.data.img}/>
         </div>
         <div className={styles.rightblock}>
         <div style={{fontSize:25, paddingBottom:5}}>

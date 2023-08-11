@@ -24,7 +24,7 @@ const todoSlice = createSlice({
             },
         toggle:(state, action)=>{
             state.todos.map((todo, i)=>{
-                if(i==action.payload){
+                if(i===action.payload){
                     todo.completed=!todo.completed;
                 }
                 return todo;

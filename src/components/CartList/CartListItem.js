@@ -1,7 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { actions } from "../../redux/reducers/cartReducer";
 import styles from "./CartList.module.css";
-import { Toaster } from "../../hooks";
 import { useToasts } from "react-toast-notifications";
 
 const CartListItem=(props)=> {
@@ -17,7 +16,7 @@ const CartListItem=(props)=> {
         <div className={styles.cartitem}>
         <div className={styles.leftblock}>
         <div className={styles.leftblock}>
-            <img className ={styles.cartimage} src={product.data.img}/>
+            <img className ={styles.cartimage} alt="" src={product.data.img}/>
         </div>
         <div className={styles.rightblock}>
         <div style={{fontSize:25}} > {product.data.title} </div>

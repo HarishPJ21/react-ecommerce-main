@@ -19,7 +19,7 @@ const CartList=()=> {
         console.log("enteered:",data.products)
               data.products.map((product,index)=>{        
                 console.log("index",index,":",product.data)
-                dispatch(actions.add(product.data));
+                return dispatch(actions.add(product.data));
           });    
       })
       localStorage.setItem('fetchdone','1');         
@@ -30,8 +30,8 @@ const CartList=()=> {
         
         <button  className={styles.actionbutton}
         onClick={()=>{dispatch(actions.sorter())}} >  
-        {!sorter && <img className={styles.actionicons} src="https://cdn-icons-png.flaticon.com/512/2582/2582618.png"/>}
-        {sorter && <img className={styles.actionicons} src="https://cdn-icons-png.flaticon.com/512/1632/1632708.png"/>}
+        {!sorter && <img className={styles.actionicons} alt="" src="https://cdn-icons-png.flaticon.com/512/2582/2582618.png"/>}
+        {sorter && <img className={styles.actionicons} alt="" src="https://cdn-icons-png.flaticon.com/512/1632/1632708.png"/>}
         sort by price
         </button>
       </div>

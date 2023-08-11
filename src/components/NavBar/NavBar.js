@@ -9,7 +9,7 @@ const NavBar = (props)=>{
           <a  href="cart">Products</a> 
           </span>
           <span>   
-          <a  href="add-cart">Add Products <img className={styles.cartIcon} src='https://cdn-icons-png.flaticon.com/512/4903/4903809.png'></img></a> 
+          <a  href="add-cart">Add Products <img className={styles.cartIcon} alt="addimage" src='https://cdn-icons-png.flaticon.com/512/4903/4903809.png'></img></a> 
           </span>
           </div>
         <div className={styles.cartIconContainer}>
