@@ -1,3 +1,6 @@
+body{
+  font-size: 1.25rem;
+}
 .cartitem {
     display: inline-flex;
     margin: 20px 10px;
@@ -40,7 +43,7 @@ input{
   form input, form textarea{
     text-align: center;
     margin: 10px 5px;
-    border: 2px solid rgb(14, 199, 69);
+    border: 4px solid rgb(14, 199, 69);
   }
   form textarea{
     height: 100px;

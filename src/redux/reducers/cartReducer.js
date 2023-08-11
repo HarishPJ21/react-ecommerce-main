@@ -1,19 +1,6 @@
-// import { useState } from "react";
 
 const { createSlice } = require("@reduxjs/toolkit")
 
-// const CartReducer=()=> {
-//     const [apiproducts,setApiproducts] = useState([]);
-//     const url="https://my-json-server.typicode.com/HarishPJ21/react-ecommerce/db"
-//     fetch(url).then((Response)=>Response.json()).then((data)=>{
-//         setApiproducts(data.products);
-//     })        
-//     // console.log("api data:",apiproducts);
-//     return apiproducts;
-//     // console.log("fr data:",fr);
-// }
-    
-// console.log(CartReducer);
 const initialState={
     products:[
         {
@@ -23,7 +10,7 @@ const initialState={
                 qty: 1,
                 rating: 4,
                 img:'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
-                description: "description description description description description description description description description description description description description description description description description description "
+                description: "A watch is a portable timepiece intended to be carried or worn by a person. It is designed to keep a consistent movement despite the motions caused by the person's activities."
                 
             },edit:false
             ,id:1
@@ -35,7 +22,7 @@ const initialState={
                 qty: 1,
                 rating: 4.5,
                 img:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80',        
-                description: "description description description description description description description description description description description description description description description description description description "
+                description: "A laptop, sometimes called a notebook computer by manufacturers, is a battery- or AC-powered personal computer (PC) smaller than a briefcase. A laptop can be easily transported and used in temporary spaces such as on airplanes, in libraries, temporary offices and at meetings."
                            
             },edit:false
             ,id:2 
