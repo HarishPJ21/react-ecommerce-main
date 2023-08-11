@@ -1,19 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 const { createSlice } = require("@reduxjs/toolkit")
 
-const CartReducer=()=> {
-    const [apiproducts,setApiproducts] = useState([]);
-    const url="https://my-json-server.typicode.com/HarishPJ21/react-ecommerce/db"
-    fetch(url).then((Response)=>Response.json()).then((data)=>{
-        setApiproducts(data.products);
-    })        
-    // console.log("api data:",apiproducts);
-    return apiproducts;
-    // console.log("fr data:",fr);
-}
+// const CartReducer=()=> {
+//     const [apiproducts,setApiproducts] = useState([]);
+//     const url="https://my-json-server.typicode.com/HarishPJ21/react-ecommerce/db"
+//     fetch(url).then((Response)=>Response.json()).then((data)=>{
+//         setApiproducts(data.products);
+//     })        
+//     // console.log("api data:",apiproducts);
+//     return apiproducts;
+//     // console.log("fr data:",fr);
+// }
     
-console.log(CartReducer);
+// console.log(CartReducer);
 const initialState={
     products:[
         {
@@ -25,8 +25,8 @@ const initialState={
                 img:'https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
                 description: "description description description description description description description description description description description description description description description description description description "
                 
-                // id:1                      
             },edit:false
+            ,id:1
         },
         {
             data:{
@@ -36,65 +36,83 @@ const initialState={
                 rating: 4.5,
                 img:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80',        
                 description: "description description description description description description description description description description description description description description description description description description "
-                // id:2              
+                           
             },edit:false
+            ,id:2 
         },
-        // ...fr
-        // CartReducer
     ],
     sorted: false
 }
-console.log("initialState:",initialState);
-
+// let id=3;
 const cartSlice = createSlice({
     name:'cart',
     initialState:initialState,
     reducers:{
-        // this is add action
+        // state implies initial state
+        //action.payload implies value that we are passing in the function        
         add:(state, action)=>{
-            // console.log("add action:",action.payload);
-            // console.log("before add action:",state);
                 state.products.push({
                     data:action.payload,
-                    edit:false
+                    edit:false,
+                    id:state.products.length
                 })
         },
+
         delete:(state, action)=>{
-            state.products.splice(action.payload,1);
-    },
+            // state.products.splice(action.payload,1);
+            state.products = state.products.filter((product,i)=>{ 
+                 return product.id !== action.payload;
+            })            
+        },
+    
         edit:(state,action)=>{
-            state.products[action.payload].edit=!state.products[action.payload].edit;
-            // state.products.map((product,i)=>{
-            //     if(i == action.payload) product.edit=true;
-            //     return product;
-            // })
+            // state.products[action.payload].edit=!state.products[action.payload].edit;
+            state.products.map((product,i)=>{
+                if(product.id === action.payload) product.edit=!product.edit;
+                return product;
+            })            
         },
+    
         cancel:(state, action)=>{
-            state.products[action.payload].edit=false;
+            // state.products[action.payload].edit=false;
+            state.products.map((product,i)=>{
+                if(product.id === action.payload) product.edit=false;
+                return product;
+            })            
         },
+    
         save:(state, action)=>{
-            // console.log("state.products",initialState.products);
-            state.products[action.payload.index]=action.payload.data;
+            state.products[state.products.findIndex((product)=> product.id === action.payload.id)]=action.payload.data;
+            console.log(state.products.findIndex((product)=> product.id === action.payload.id));
+            
+            // state.products.map((product,i)=>{
+            //     if(product.id == action.payload.id) {console.log(action.payload.id); product=action.payload.data;}
+            //     return product;
+            // })            
         },
+    
         sorter:(state, action)=>{
             state.sorted=!state.sorted;
-        },
-        
+        },    
     }
 });
 
+//reducer
 export const cartReducer=cartSlice.reducer;
 
+//actions
 export const actions = cartSlice.actions;
 
-// selector
+
+// selector to returm products wrt to the sort value
 export const cartSelector = (state)=>{
-    // console.log('state.cartReducer',state);
     if(state.cartReducer.sorted) return [...state.cartReducer.products].sort((a, b)=>a.data.price - b.data.price);    
     return state.cartReducer.products;
 }
 
+//Selector fpr sprted value
 export const cartSortSelector = (state)=>{
-    // console.log('state.cartReducer',state);
     return state.cartReducer.sorted;
 }
+
+// console.log("initialState:",initialState);

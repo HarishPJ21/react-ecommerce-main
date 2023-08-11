@@ -1,32 +1,27 @@
 import { useDispatch } from "react-redux";
-// import { toggleTodo } from "../../redux/actions/todoActions";
 import { actions } from "../../redux/reducers/cartReducer";
-// import { todoSelector } from "../../redux/reducers/todoReducer";
 import styles from "./CartList.module.css";
 import { useFormInput } from "../../hooks";
 import { useToasts } from "react-toast-notifications";
  
 
-const CartListEditItem=(props)=> {
-  let {product,index} = props;
+const  CartListEditItem=(props)=> {
+  let {product} = props;
   const {addToast} = useToasts();
 
-    // console.log(cartSelector);
 
     
-    console.log("edit products",product);
+    // console.log("edit products",product);
     const disptach = useDispatch();
+    const id=product.id;
 
     const title=useFormInput(product.data.title);
     const rating=useFormInput(product.data.rating);
     const description=useFormInput(product.data.description);
     const price=useFormInput(product.data.price);
-    // const todos= store.getState().todos;
 
   return (
         <div className={styles.cartitem}>
-        {/* {product.data.edit=true} */}
-        {/* {console.log(product.data)} */}
         <div className={styles.leftblock}>
         <div className={styles.leftblock}>
             <img className ={styles.cartimage} alt="cart broken" src={product.data.img}/>
@@ -49,32 +44,22 @@ const CartListEditItem=(props)=> {
         placeholder="Enter Name" {...rating} />
         </div>
         
-        {/* <div style={{color:'#777'}}>Qty{product.data.qty}</div> */}
         
         <div className={styles.cartitemactions}>
-            {/* {button} */}
-            {/* <img
-            alt="increase"
-            className={styles.actionicons}
-            src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
-            // onClick={() => {props.increaseQuantity(props.product)}}
-            />
-            <img
-            alt="decrease"
-            className={styles.actionicons}
-            src="https://cdn-icons-png.flaticon.com/512/992/992683.png"
-            // onClick={()=> {props.decreaseQuantity(props.product)}}
-            /> */}
+
+          {/* delete button */}
             <img
             alt="delete"
             className={styles.actionicons}
             src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"
-            onClick={()=> {disptach(actions.delete(index)) }}
+            onClick={()=> {disptach(actions.delete(id)) }}
             />
+
+            {/* edit button */}
           <img alt='edit' 
           className={styles.actionicons} 
           src='https://cdn-icons-png.flaticon.com/512/1159/1159633.png' 
-          onClick={()=>{disptach(actions.edit(index))}} 
+          onClick={()=>{disptach(actions.edit(id))}} 
           />
         </div>
         </div>
@@ -84,12 +69,12 @@ const CartListEditItem=(props)=> {
         <textarea className={styles.descriptionblockedit} type="textarea" // className={} 
         placeholder="Enter Name" {...description} />
         {/* cancel button */}
-        <button className="btn btn-success float-end" onClick={()=>{disptach(actions.cancel(index))}}> cancel </button>
+        <button className="btn btn-success float-end" onClick={()=>{disptach(actions.cancel(id))}}> cancel </button>
         
         {/* save button */}
         <button className="btn btn-success float-end" onClick={()=>{disptach(actions.save(
           {
-            index,
+            id,
             data:{
               data:{              
               ...product.data,
@@ -97,7 +82,7 @@ const CartListEditItem=(props)=> {
               price:price.value,
               rating:rating.value,
               description:description.value},
-              edit:false
+              edit:false, id:id
             }
           }
           ))
@@ -105,8 +90,6 @@ const CartListEditItem=(props)=> {
           
           }}> save </button>
           </div>
-        {}
-        {}
         </div>
 );
 }

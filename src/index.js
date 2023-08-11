@@ -15,9 +15,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let persistor = persistStore(store);
 
 root.render(
+  // Provider is to provide access to the redux store 
   <Provider store={store}>
   <React.StrictMode>
+    {/* ToastProvider is to show the notifications */}
     <ToastProvider autoDismiss autoDismissTimeout={5000} placement="top-right">
+      {/* persistor is to store the data in localStorage  */}
       <PersistGate persistor={persistor}>
       <App />
       </PersistGate>

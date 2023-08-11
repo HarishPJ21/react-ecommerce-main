@@ -11,7 +11,8 @@ const AddCartForm = ()=>{
     const name=useFormInput(""), description=useFormInput(""),price=useFormInput(""),rating=useFormInput(""),imageLink=useFormInput("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log("submit hit");
+        // console.log("submit hit");
+        if(imageLink.value==="" || price.value==="" || name.value==="") return addToast("please enter a valid Details",{appearance:"error"});
         let data={
             title: name.value,
             description:description.value,
@@ -19,9 +20,11 @@ const AddCartForm = ()=>{
             rating:rating.value,
             img:imageLink.value
         }
-        console.log("submitvalue:",data);
+        // console.log("submitvalue:",data);
         dispatch(actions.add(data));
-        e.preventDefault();
+        
+        // e.preventDefault();
+        name.setValue(""); description.setValue("");price.setValue(""); rating.setValue(""); imageLink.setValue("");
         return addToast("Product Added Successfully",{appearance:"success"});
     }
     return (

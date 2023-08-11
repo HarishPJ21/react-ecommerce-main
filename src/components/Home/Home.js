@@ -5,11 +5,11 @@ function Home(){
 
     return(
         <div className={styles.container}>
-            <a href="todo" className={"btn btn-warning "+styles.link}>
-                To Do App
+            <a href="cart" className={"btn btn-warning "+styles.link}>
+                VIEW CART
             </a>
-            <a href="notes" className={"btn btn-warning "+styles.link}>
-                Note Keeper
+            <a href="add-cart" className={"btn btn-warning "+styles.link}>
+                ADD CART
             </a>
         </div>
     )

@@ -8,7 +8,8 @@ export function useFormInput(Initalvalue){
     }
     return{
         value,
-        onChange:handleChange
+        onChange:handleChange,
+        setValue
     }
 }
 
