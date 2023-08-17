@@ -38,7 +38,7 @@ const cartSlice = createSlice({
         // state implies initial state
         //action.payload implies value that we are passing in the function        
         add:(state, action)=>{
-            console.log(state.products.length);
+            // console.log(state.products.length);
             state.products.push({
                     data:action.payload,
                     edit:false,
@@ -71,8 +71,8 @@ const cartSlice = createSlice({
     
         save:(state, action)=>{
             state.products[state.products.findIndex((product)=> product.id === action.payload.id)]=action.payload.data;
-            console.log("state products:",state.products)
-            console.log(state.products.findIndex((product)=> product.id === action.payload.id));
+            // console.log("state products:",state.products)
+            // console.log(state.products.findIndex((product)=> product.id === action.payload.id));
             
             // state.products.map((product,i)=>{
             //     if(product.id == action.payload.id) {console.log(action.payload.id); product=action.payload.data;}
