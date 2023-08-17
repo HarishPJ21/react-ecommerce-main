@@ -11,7 +11,8 @@ const AddCartForm = ()=>{
     const name=useFormInput(""), description=useFormInput(""),price=useFormInput(""),rating=useFormInput(""),imageLink=useFormInput("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        // console.log("submit hit");
+        //if any value is balnk amoung price image or name it will throw an error 
+
         if(imageLink.value==="" || price.value==="" || name.value==="") return addToast("please enter a valid Details",{appearance:"error"});
         let data={
             title: name.value,
@@ -20,17 +21,17 @@ const AddCartForm = ()=>{
             rating:rating.value,
             img:imageLink.value
         }
-        // console.log("submitvalue:",data);
+
         dispatch(actions.add(data));
         
-        // e.preventDefault();
+
         name.setValue(""); description.setValue("");price.setValue(""); rating.setValue(""); imageLink.setValue("");
         return addToast("Product Added Successfully",{appearance:"success"});
     }
     return (
       <div className={styles.inputdiv}>
         <form onSubmit={handleSubmit}>
-          {/* <div className="input"></div> */}
+
             <input
             type="text"
             // className={}

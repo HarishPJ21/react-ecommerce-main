@@ -11,7 +11,6 @@ const  CartListEditItem=(props)=> {
 
 
     
-    // console.log("edit products",product);
     const disptach = useDispatch();
     const id=product.id;
 

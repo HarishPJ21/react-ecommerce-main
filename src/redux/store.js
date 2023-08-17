@@ -1,8 +1,4 @@
 
-// const redux = require("redux");
-
-// import * as redux from "redux";
-// import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "./reducers/cartReducer";
 import storage from "redux-persist/lib/storage";
