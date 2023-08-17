@@ -38,12 +38,14 @@ const cartSlice = createSlice({
         // state implies initial state
         //action.payload implies value that we are passing in the function        
         add:(state, action)=>{
+            let i = JSON.parse(localStorage.id);
             // console.log(state.products.length);
             state.products.push({
                     data:action.payload,
                     edit:false,
-                    id:state.products.length
+                    id:i++
                 })
+            localStorage.id = JSON.stringify(i);
         },
 
         delete:(state, action)=>{

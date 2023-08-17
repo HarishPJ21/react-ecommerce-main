@@ -20,6 +20,7 @@ const CartList=()=> {
     //fetching data from below url and pushing it into the store using action
     const url="https://my-json-server.typicode.com/HarishPJ21/HostDB/db"
     if(!fetchdone){
+      localStorage.id = JSON.stringify(2);
       fetch(url).then((Response)=>Response.json()).then((data)=>{
         // console.log("enteered:",data.products)
               data.products.map((product,index)=>{        

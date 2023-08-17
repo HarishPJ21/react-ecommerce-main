@@ -13,7 +13,9 @@ const NavBar = (props)=>{
           </span>
           </div>
         <div className={styles.cartIconContainer}>
+          <a href="/">
           <img className={styles.cartIcon} src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="cart-icon" />
+          </a>
           {/* <span className={styles.cartCount}>{props.count}</span> */}
         </div>
   {/* <div  class="container-fluid">
