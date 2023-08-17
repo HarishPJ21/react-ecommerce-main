@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+a# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**home page**
+from this page on clicking of a button they can navigate through cart or add to ncart
+![image](https://github.com/HarishPJ21/react-ecommerce-main/assets/38295998/c5d02a92-8e18-4206-8bb0-ad76acc25261)
 
-## Available Scripts
 
-In the project directory, you can run:
+**view items page**
+from this page we can view all the intems in the cart
+the below functionalities are enabled here
+delete: using this we can delete an item from the cart
 
-### `npm start`
+edit: using this we can edit an item inside the cart
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+save/cancel: using this we can save/cancel the editted item in the cart
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+sort by price: using this we can sort the cart items on the basis of price
 
-### `npm test`
+![image](https://github.com/HarishPJ21/react-ecommerce-main/assets/38295998/e882eb30-ef37-44a9-a44f-511a29529985)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Add product page**
+from this page we can add an item to the cart
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+the below functionalities are enabled here
+add: using this we can add an item to the cart
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/HarishPJ21/react-ecommerce-main/assets/38295998/3775647e-9083-4923-a995-7df9d4185089)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+pop up notification
+using react toast we are showing the notifications based on the actions
+![image](https://github.com/HarishPJ21/react-ecommerce-main/assets/38295998/4e38f95a-82f2-40c9-9c4e-9868ac0e5a58)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+link for the website
+https://cart-app-007.web.app/
