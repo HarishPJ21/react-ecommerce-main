@@ -13,7 +13,7 @@ const initialState={
                 description: "A watch is a portable timepiece intended to be carried or worn by a person. It is designed to keep a consistent movement despite the motions caused by the person's activities."
                 
             },edit:false
-            ,id:1
+            ,id:0
         },
         {
             data:{
@@ -25,7 +25,7 @@ const initialState={
                 description: "A laptop, sometimes called a notebook computer by manufacturers, is a battery- or AC-powered personal computer (PC) smaller than a briefcase. A laptop can be easily transported and used in temporary spaces such as on airplanes, in libraries, temporary offices and at meetings."
                            
             },edit:false
-            ,id:2 
+            ,id:1 
         },
     ],
     sorted: false
@@ -38,7 +38,8 @@ const cartSlice = createSlice({
         // state implies initial state
         //action.payload implies value that we are passing in the function        
         add:(state, action)=>{
-                state.products.push({
+            console.log(state.products.length);
+            state.products.push({
                     data:action.payload,
                     edit:false,
                     id:state.products.length
@@ -70,6 +71,7 @@ const cartSlice = createSlice({
     
         save:(state, action)=>{
             state.products[state.products.findIndex((product)=> product.id === action.payload.id)]=action.payload.data;
+            console.log("state products:",state.products)
             console.log(state.products.findIndex((product)=> product.id === action.payload.id));
             
             // state.products.map((product,i)=>{
